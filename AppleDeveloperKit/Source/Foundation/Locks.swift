@@ -10,6 +10,45 @@ import os.lock
 
 // [Comparison between different locks.](https://www.vincents.cn/2017/03/14/ios-lock/)
 
+public enum LockType {
+    case nslock
+    case mutexLock
+    case unfairLock
+    case semaphoreLock
+}
+
+/// In some cases, we want to test the performance lost by lock. So AnyLock can do this,
+/// it can set the lock enable or disable,  the code structure is also not affected.
+/// If not these cases, please use the detailed lock directly.
+public final class AnyLock: Lockable {
+    private var _lock: Lockable? = nil
+    
+    public init(type: LockType = .mutexLock, isEnabled: Bool = true) {
+        guard isEnabled else { return }
+        
+        switch type {
+        case .nslock:
+            _lock = Lock()
+        case .mutexLock:
+            _lock = MutexLock()
+        case .unfairLock:
+            _lock = UnfairLock()
+        case .semaphoreLock:
+            _lock = SemaphoreLock()
+        }
+    }
+    
+    public func lock() {
+        guard _lock != nil else { return }
+        _lock?.lock()
+    }
+    
+    public func unlock() {
+        guard _lock != nil else { return }
+        _lock?.unlock()
+    }
+}
+
 /// A simple lock protocol.
 ///
 /// - `lock/unlock` must be used in pairs.
@@ -20,13 +59,14 @@ public protocol Lockable {
     func sync<T>(_ clousure: () -> T) -> T
 }
 
-public extension Lockable {
-    func sync<T>(_ clousure: () -> T) -> T {
+extension Lockable {
+    public func sync<T>(_ clousure: () -> T) -> T {
         lock()
         defer { unlock() }
         return clousure()
     }
 }
+
 
 /**
  A `NSLock` wrapped lock. For more information, see [NSLock].
@@ -37,7 +77,6 @@ public extension Lockable {
  - Warning: Lock and unlock should be called on the same thread.
  */
 public final class Lock: Lockable {
-    
     private let _lock: NSLock
     
     public init() {
@@ -62,7 +101,6 @@ public final class Lock: Lockable {
  - Warning: Lock and unlock should be called on the same thread.
  */
 public final class MutexLock: Lockable {
-    
     private var _lock: pthread_mutex_t
     
     deinit {
@@ -91,9 +129,7 @@ public final class MutexLock: Lockable {
  
  - Warning: Lock and unlock should be called on the same thread.
  */
-@available(iOS 10.0, *)
 public final class UnfairLock: Lockable {
-    
     private var _lock: os_unfair_lock
     
     public init() {
@@ -114,7 +150,6 @@ public final class UnfairLock: Lockable {
  but we can use it as a lock by specifying the value of semaphore as one.
  */
 public final class SemaphoreLock: Lockable {
-    
     private let _lock: DispatchSemaphore
     
     public init() {
