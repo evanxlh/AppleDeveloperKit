@@ -30,6 +30,8 @@
 		2013FFF5298F8BB400E4420D /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFF4298F8BB400E4420D /* VersionTests.swift */; };
 		2013FFFB298F8FCF00E4420D /* DispatchTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */; };
 		2013FFFE298F913900E4420D /* DispatchQueue+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */; };
+		5470A175299097AA00CC2CAD /* TimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5470A174299097AA00CC2CAD /* TimeProfiler.swift */; };
+		5470A1772990987E00CC2CAD /* MultiTimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimerTests.swift; sourceTree = "<group>"; };
 		2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ADK.swift"; sourceTree = "<group>"; };
 		2013FFFF298F91B000E4420D /* DispatchQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueTests.swift; sourceTree = "<group>"; };
+		5470A174299097AA00CC2CAD /* TimeProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProfiler.swift; sourceTree = "<group>"; };
+		5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTimeProfiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +136,6 @@
 				2013FFCB298F724800E4420D /* AppleDeveloperKit.swift */,
 				2013FFEA298F81F300E4420D /* Bundle */,
 				2013FFE5298F7E2700E4420D /* Cache */,
-				2013FFDE298F7C9000E4420D /* Debug */,
 				2013FFD4298F741800E4420D /* Foundation */,
 				2013FFCD298F72E100E4420D /* CoreGraphics */,
 				2013FFD7298F768000E4420D /* Image */,
@@ -171,13 +174,6 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		2013FFDE298F7C9000E4420D /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Debug;
-			sourceTree = "<group>";
-		};
 		2013FFE5298F7E2700E4420D /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				2013FFF2298F8B7000E4420D /* Version.swift */,
+				5470A1732990977800CC2CAD /* TimeProfiler */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -236,6 +233,15 @@
 				2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */,
 			);
 			path = Dispatch;
+			sourceTree = "<group>";
+		};
+		5470A1732990977800CC2CAD /* TimeProfiler */ = {
+			isa = PBXGroup;
+			children = (
+				5470A174299097AA00CC2CAD /* TimeProfiler.swift */,
+				5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */,
+			);
+			path = TimeProfiler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +362,7 @@
 				2013FFCF298F734B00E4420D /* CGPoint+ADK.swift in Sources */,
 				2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */,
 				2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */,
+				5470A1772990987E00CC2CAD /* MultiTimeProfiler.swift in Sources */,
 				2013FFEE298F82A700E4420D /* AppleBundle.swift in Sources */,
 				2013FFD3298F736A00E4420D /* CGRect+ADK.swift in Sources */,
 				2013FFE4298F7D7100E4420D /* WeakObject.swift in Sources */,
@@ -363,6 +370,7 @@
 				2013FFD9298F769A00E4420D /* Image+ADK.swift in Sources */,
 				2013FFD1298F735D00E4420D /* CGSize+ADK.swift in Sources */,
 				2013FFFE298F913900E4420D /* DispatchQueue+ADK.swift in Sources */,
+				5470A175299097AA00CC2CAD /* TimeProfiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
