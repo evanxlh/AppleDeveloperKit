@@ -17,21 +17,21 @@ final class DispatchQueueTests: XCTestCase {
         let flag = self.expectation(description: "wait")
         
         queue1.async {
-            XCTAssertTrue(DispatchQueue.isCurrent(self.queue1))
-            XCTAssertFalse(DispatchQueue.isCurrent(self.queue2))
-            XCTAssertFalse(DispatchQueue.isMain)
+            XCTAssertTrue(self.queue1.adk.isCurrent)
+            XCTAssertFalse(self.queue2.adk.isCurrent)
+            XCTAssertFalse(self.queue1.adk.isMain)
         }
         
         queue2.async {
-            XCTAssertTrue(DispatchQueue.isCurrent(self.queue2))
-            XCTAssertFalse(DispatchQueue.isCurrent(self.queue1))
-            XCTAssertFalse(DispatchQueue.isMain)
+            XCTAssertTrue(self.queue2.adk.isCurrent)
+            XCTAssertFalse(self.queue1.adk.isCurrent)
+            XCTAssertFalse(self.queue2.adk.isMain)
         }
         
         DispatchQueue.main.async {
-            XCTAssertFalse(DispatchQueue.isCurrent(self.queue2))
-            XCTAssertFalse(DispatchQueue.isCurrent(self.queue1))
-            XCTAssertTrue(DispatchQueue.isMain)
+            XCTAssertFalse(self.queue2.adk.isCurrent)
+            XCTAssertFalse(self.queue1.adk.isCurrent)
+            XCTAssertTrue(DispatchQueue.main.adk.isMain)
         }
         
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1), execute: {

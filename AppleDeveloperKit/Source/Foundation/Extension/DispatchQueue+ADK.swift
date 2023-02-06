@@ -7,40 +7,43 @@
 
 import Foundation
 
-public extension DispatchQueue {
+extension DispatchQueue: AppleDeveloperKitCompatible {}
+
+public extension AppleDeveloperKitWrapper where Base == DispatchQueue {
     
     /// A boolean value indicating whether the current running dispatch queue is main.
-    static var isMain: Bool {
+    var isMain: Bool {
         return Thread.isMainThread
     }
     
-    /// A boolean value indicating whether the given dispatch queue is the current
+    /// A boolean value indicating whether the queue is the current
     /// running dispatch queue.
-    static func isCurrent(_ queue: DispatchQueue) -> Bool {
+    var isCurrent: Bool {
         let key = DispatchSpecificKey<UInt32>()
-        queue.setSpecific(key: key, value: arc4random())
-        defer { queue.setSpecific(key: key, value: nil) }
+        base.setSpecific(key: key, value: arc4random())
+        defer { base.setSpecific(key: key, value: nil) }
         
         return DispatchQueue.getSpecific(key: key) != nil
     }
     
     /// Running block on the queue synchronously without deadlock.
     @discardableResult
-    func syncWithoutDeadlock<T>(_ block: @autoclosure () -> T) -> T {
-        if DispatchQueue.isCurrent(self) {
+    func sync<T>(_ block: @autoclosure () -> T) -> T {
+        if isCurrent {
             return block()
         } else {
-            return sync { block() }
+            return base.sync { block() }
         }
     }
     
     /// If the queue is the current, just run block directly, or async on the queue.
-    func asyncIfNeed(_ block: @escaping () -> Void) {
-        if DispatchQueue.isCurrent(self) {
+    func async(_ block: @escaping () -> Void) {
+        if isCurrent {
             block()
         } else {
-            async { block() }
+            base.async { block() }
         }
     }
     
 }
+
