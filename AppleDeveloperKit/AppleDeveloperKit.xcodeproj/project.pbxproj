@@ -14,6 +14,7 @@
 		20130009299146F000E4420D /* BinaryFloatingPoint+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20130008299146F000E4420D /* BinaryFloatingPoint+ADK.swift */; };
 		2013000C2991494000E4420D /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013000B2991494000E4420D /* PlayerController.swift */; };
 		2013000E2991497400E4420D /* VideoTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013000D2991497400E4420D /* VideoTrimmer.swift */; };
+		201300102991524600E4420D /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013000F2991524600E4420D /* Shell.swift */; };
 		2013FFB6298F6B3400E4420D /* AppleDeveloperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2013FFB5298F6B3400E4420D /* AppleDeveloperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2013FFC4298F70F100E4420D /* AppleDeveloperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2013FFB2298F6B3400E4420D /* AppleDeveloperKit.framework */; };
 		2013FFCC298F724800E4420D /* AppleDeveloperKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFCB298F724800E4420D /* AppleDeveloperKit.swift */; };
@@ -57,6 +58,7 @@
 		20130008299146F000E4420D /* BinaryFloatingPoint+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+ADK.swift"; sourceTree = "<group>"; };
 		2013000B2991494000E4420D /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		2013000D2991497400E4420D /* VideoTrimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmer.swift; sourceTree = "<group>"; };
+		2013000F2991524600E4420D /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		2013FFB2298F6B3400E4420D /* AppleDeveloperKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleDeveloperKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2013FFB5298F6B3400E4420D /* AppleDeveloperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleDeveloperKit.h; sourceTree = "<group>"; };
 		2013FFC0298F70F100E4420D /* AppleDeveloperKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleDeveloperKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				2013FFF2298F8B7000E4420D /* Version.swift */,
+				2013000F2991524600E4420D /* Shell.swift */,
 				5470A1732990977800CC2CAD /* TimeProfiler */,
 			);
 			path = Utility;
@@ -394,6 +397,7 @@
 				2013FFE0298F7D4500E4420D /* Locks.swift in Sources */,
 				2013FFF3298F8B7000E4420D /* Version.swift in Sources */,
 				2013FFCF298F734B00E4420D /* CGPoint+ADK.swift in Sources */,
+				201300102991524600E4420D /* Shell.swift in Sources */,
 				2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */,
 				2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */,
 				2013000E2991497400E4420D /* VideoTrimmer.swift in Sources */,

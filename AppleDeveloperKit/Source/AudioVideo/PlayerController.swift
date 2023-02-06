@@ -248,49 +248,7 @@ public extension PlayerController {
     
 }
 
-fileprivate extension PlayerController {
-    
-    func doActualSeek(_ time: CMTime) {
-        seekTimeInProgress = time
-        seekTimeInWaiting = nil
-        
-        player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero) { [weak self] _ in
-            guard let `self` = self else { return }
-            if let nextSeekTime = self.seekTimeInWaiting, nextSeekTime != time {
-                self.doActualSeek(nextSeekTime)
-            } else {
-                self.seekTimeInWaiting = nil
-                self.seekTimeInProgress = nil
-            }
-        }
-    }
-    
-    func mapUnderlyingStatus(_ status: AVPlayer.Status) -> PlayerStatus {
-        switch status {
-        case .failed:
-            return .failToLoad
-        case .readyToPlay:
-            return .readyToPlay
-        default:
-            return .failToLoad
-        }
-    }
-    
-    func mapUnderlyingStatus(_ status: AVPlayer.TimeControlStatus) -> PlayerStatus {
-        switch status {
-        case .playing:
-            return .playing
-        case .paused:
-            return .paused
-        case .waitingToPlayAtSpecifiedRate:
-            return .playing
-        @unknown default:
-            return .paused
-        }
-    }
-}
-
-//MARK: - Observe Special Events
+//MARK: - Private Functions
 
 fileprivate extension PlayerController {
     
@@ -374,6 +332,45 @@ fileprivate extension PlayerController {
     func handlePlayerStatusChange(_ newStatus: PlayerStatus) {
         _playerStatus = newStatus
         statusCallback?(_playerStatus)
+    }
+    
+    func doActualSeek(_ time: CMTime) {
+        seekTimeInProgress = time
+        seekTimeInWaiting = nil
+        
+        player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero) { [weak self] _ in
+            guard let `self` = self else { return }
+            if let nextSeekTime = self.seekTimeInWaiting, nextSeekTime != time {
+                self.doActualSeek(nextSeekTime)
+            } else {
+                self.seekTimeInWaiting = nil
+                self.seekTimeInProgress = nil
+            }
+        }
+    }
+    
+    func mapUnderlyingStatus(_ status: AVPlayer.Status) -> PlayerStatus {
+        switch status {
+        case .failed:
+            return .failToLoad
+        case .readyToPlay:
+            return .readyToPlay
+        default:
+            return .failToLoad
+        }
+    }
+    
+    func mapUnderlyingStatus(_ status: AVPlayer.TimeControlStatus) -> PlayerStatus {
+        switch status {
+        case .playing:
+            return .playing
+        case .paused:
+            return .paused
+        case .waitingToPlayAtSpecifiedRate:
+            return .playing
+        @unknown default:
+            return .paused
+        }
     }
     
 }
