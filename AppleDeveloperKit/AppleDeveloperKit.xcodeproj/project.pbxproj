@@ -12,6 +12,8 @@
 		201300052991339C00E4420D /* FileManager+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201300042991339C00E4420D /* FileManager+ADK.swift */; };
 		201300072991393900E4420D /* FileCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201300062991393900E4420D /* FileCacheManager.swift */; };
 		20130009299146F000E4420D /* BinaryFloatingPoint+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20130008299146F000E4420D /* BinaryFloatingPoint+ADK.swift */; };
+		2013000C2991494000E4420D /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013000B2991494000E4420D /* PlayerController.swift */; };
+		2013000E2991497400E4420D /* VideoTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013000D2991497400E4420D /* VideoTrimmer.swift */; };
 		2013FFB6298F6B3400E4420D /* AppleDeveloperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2013FFB5298F6B3400E4420D /* AppleDeveloperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2013FFC4298F70F100E4420D /* AppleDeveloperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2013FFB2298F6B3400E4420D /* AppleDeveloperKit.framework */; };
 		2013FFCC298F724800E4420D /* AppleDeveloperKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFCB298F724800E4420D /* AppleDeveloperKit.swift */; };
@@ -53,6 +55,8 @@
 		201300042991339C00E4420D /* FileManager+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+ADK.swift"; sourceTree = "<group>"; };
 		201300062991393900E4420D /* FileCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCacheManager.swift; sourceTree = "<group>"; };
 		20130008299146F000E4420D /* BinaryFloatingPoint+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+ADK.swift"; sourceTree = "<group>"; };
+		2013000B2991494000E4420D /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		2013000D2991497400E4420D /* VideoTrimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmer.swift; sourceTree = "<group>"; };
 		2013FFB2298F6B3400E4420D /* AppleDeveloperKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleDeveloperKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2013FFB5298F6B3400E4420D /* AppleDeveloperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleDeveloperKit.h; sourceTree = "<group>"; };
 		2013FFC0298F70F100E4420D /* AppleDeveloperKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleDeveloperKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2013000A299148FD00E4420D /* AudioVideo */ = {
+			isa = PBXGroup;
+			children = (
+				2013000B2991494000E4420D /* PlayerController.swift */,
+				2013000D2991497400E4420D /* VideoTrimmer.swift */,
+			);
+			path = AudioVideo;
+			sourceTree = "<group>";
+		};
 		2013FFA8298F6B3400E4420D = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 				2013FFE5298F7E2700E4420D /* Cache */,
 				2013FFCD298F72E100E4420D /* CoreGraphics */,
 				2013FFD7298F768000E4420D /* Image */,
+				2013000A299148FD00E4420D /* AudioVideo */,
 				2013FFF1298F8B5D00E4420D /* Utility */,
 			);
 			path = Source;
@@ -382,6 +396,7 @@
 				2013FFCF298F734B00E4420D /* CGPoint+ADK.swift in Sources */,
 				2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */,
 				2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */,
+				2013000E2991497400E4420D /* VideoTrimmer.swift in Sources */,
 				201300072991393900E4420D /* FileCacheManager.swift in Sources */,
 				5470A1772990987E00CC2CAD /* MultiTimeProfiler.swift in Sources */,
 				2013FFEE298F82A700E4420D /* AppleBundle.swift in Sources */,
@@ -394,6 +409,7 @@
 				2013FFD9298F769A00E4420D /* Image+ADK.swift in Sources */,
 				2013FFD1298F735D00E4420D /* CGSize+ADK.swift in Sources */,
 				2013FFFE298F913900E4420D /* DispatchQueue+ADK.swift in Sources */,
+				2013000C2991494000E4420D /* PlayerController.swift in Sources */,
 				5470A175299097AA00CC2CAD /* TimeProfiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
