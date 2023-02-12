@@ -60,6 +60,7 @@ public protocol Lockable {
 }
 
 extension Lockable {
+    @discardableResult
     public func sync<T>(_ clousure: () -> T) -> T {
         lock()
         defer { unlock() }

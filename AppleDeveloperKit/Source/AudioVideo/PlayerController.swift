@@ -105,7 +105,7 @@ public class PlayerController: NSObject {
     }
 }
 
-//MARK: - Asset
+// MARK: - Asset
 
 public extension PlayerController {
     
@@ -148,7 +148,7 @@ public extension PlayerController {
     
 }
 
-//MARK: - Player Status
+// MARK: - Player Status
 
 public extension PlayerController {
     
@@ -193,7 +193,7 @@ public extension PlayerController {
     
 }
 
-//MARK: - Seek APIs
+// MARK: - Seek APIs
 
 public extension PlayerController {
     
@@ -248,7 +248,7 @@ public extension PlayerController {
     
 }
 
-//MARK: - Private Functions
+// MARK: - Private Functions
 
 fileprivate extension PlayerController {
     

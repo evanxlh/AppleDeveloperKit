@@ -27,7 +27,7 @@
 		2013FFDD298F7BF000E4420D /* ArrayMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFDC298F7BF000E4420D /* ArrayMoveTests.swift */; };
 		2013FFE0298F7D4500E4420D /* Locks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFDF298F7D4500E4420D /* Locks.swift */; };
 		2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFE1298F7D5500E4420D /* DispatchTimer.swift */; };
-		2013FFE4298F7D7100E4420D /* WeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFE3298F7D7100E4420D /* WeakObject.swift */; };
+		2013FFE4298F7D7100E4420D /* WeakObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFE3298F7D7100E4420D /* WeakObjects.swift */; };
 		2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFE6298F800F00E4420D /* MemoryCache.swift */; };
 		2013FFE9298F80B900E4420D /* MemoryCahceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFE8298F80B900E4420D /* MemoryCahceTests.swift */; };
 		2013FFEC298F820100E4420D /* MainBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFEB298F820100E4420D /* MainBundle.swift */; };
@@ -43,6 +43,10 @@
 		20D403FB2998C951003D7430 /* SystemControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D403FA2998C951003D7430 /* SystemControl.swift */; };
 		20D403FD2998DA6C003D7430 /* SystemControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D403FC2998DA6C003D7430 /* SystemControlTests.swift */; };
 		20D4040629993577003D7430 /* AppleDeveloperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2013FFB2298F6B3400E4420D /* AppleDeveloperKit.framework */; platformFilter = ios; };
+		20D4043B29994058003D7430 /* WeakObjectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4043A29994058003D7430 /* WeakObjectsTests.swift */; };
+		20D4043D29994551003D7430 /* String+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4043C29994551003D7430 /* String+ADK.swift */; };
+		20D4043F29994684003D7430 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4043E29994684003D7430 /* Validator.swift */; };
+		20D4044129994746003D7430 /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4044029994746003D7430 /* ValidatorTests.swift */; };
 		5470A175299097AA00CC2CAD /* TimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5470A174299097AA00CC2CAD /* TimeProfiler.swift */; };
 		5470A1772990987E00CC2CAD /* MultiTimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */; };
 /* End PBXBuildFile section */
@@ -85,7 +89,7 @@
 		2013FFDC298F7BF000E4420D /* ArrayMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayMoveTests.swift; sourceTree = "<group>"; };
 		2013FFDF298F7D4500E4420D /* Locks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locks.swift; sourceTree = "<group>"; };
 		2013FFE1298F7D5500E4420D /* DispatchTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
-		2013FFE3298F7D7100E4420D /* WeakObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakObject.swift; sourceTree = "<group>"; };
+		2013FFE3298F7D7100E4420D /* WeakObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakObjects.swift; sourceTree = "<group>"; };
 		2013FFE6298F800F00E4420D /* MemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
 		2013FFE8298F80B900E4420D /* MemoryCahceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCahceTests.swift; sourceTree = "<group>"; };
 		2013FFEB298F820100E4420D /* MainBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBundle.swift; sourceTree = "<group>"; };
@@ -102,6 +106,10 @@
 		20D403FA2998C951003D7430 /* SystemControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemControl.swift; sourceTree = "<group>"; };
 		20D403FC2998DA6C003D7430 /* SystemControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemControlTests.swift; sourceTree = "<group>"; };
 		20D4040229993577003D7430 /* AppleDeveloperKitTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppleDeveloperKitTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20D4043A29994058003D7430 /* WeakObjectsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakObjectsTests.swift; sourceTree = "<group>"; };
+		20D4043C29994551003D7430 /* String+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ADK.swift"; sourceTree = "<group>"; };
+		20D4043E29994684003D7430 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		20D4044029994746003D7430 /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		5470A174299097AA00CC2CAD /* TimeProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProfiler.swift; sourceTree = "<group>"; };
 		5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTimeProfiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,10 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				2013FFDA298F78F300E4420D /* Array+ADK.swift */,
-				2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */,
-				2013000229912D8000E4420D /* UserDefaults+ADK.swift */,
-				201300042991339C00E4420D /* FileManager+ADK.swift */,
 				20130008299146F000E4420D /* BinaryFloatingPoint+ADK.swift */,
+				201300042991339C00E4420D /* FileManager+ADK.swift */,
+				2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */,
+				20D4043C29994551003D7430 /* String+ADK.swift */,
+				2013000229912D8000E4420D /* UserDefaults+ADK.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,7 +237,7 @@
 				2013FFD5298F743900E4420D /* Foundation.swift */,
 				2013FFE1298F7D5500E4420D /* DispatchTimer.swift */,
 				2013FFDF298F7D4500E4420D /* Locks.swift */,
-				2013FFE3298F7D7100E4420D /* WeakObject.swift */,
+				2013FFE3298F7D7100E4420D /* WeakObjects.swift */,
 				2013000129912D3D00E4420D /* Extension */,
 			);
 			path = Foundation;
@@ -265,6 +274,7 @@
 			children = (
 				2013FFF2298F8B7000E4420D /* Version.swift */,
 				20D403FA2998C951003D7430 /* SystemControl.swift */,
+				20D4043E29994684003D7430 /* Validator.swift */,
 				5470A1732990977800CC2CAD /* TimeProfiler */,
 			);
 			path = Utility;
@@ -274,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				2013FFF4298F8BB400E4420D /* VersionTests.swift */,
+				20D4044029994746003D7430 /* ValidatorTests.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -284,6 +295,7 @@
 				2013FFDC298F7BF000E4420D /* ArrayMoveTests.swift */,
 				2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */,
 				2013FFFF298F91B000E4420D /* DispatchQueueTests.swift */,
+				20D4043A29994058003D7430 /* WeakObjectsTests.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -471,6 +483,7 @@
 				2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */,
 				20D403F32998BDD4003D7430 /* VideoLayerView.swift in Sources */,
 				2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */,
+				20D4043D29994551003D7430 /* String+ADK.swift in Sources */,
 				20D403F52998C12B003D7430 /* CameraPreviewView.swift in Sources */,
 				2013000E2991497400E4420D /* VideoTrimmer.swift in Sources */,
 				201300072991393900E4420D /* FileCacheManager.swift in Sources */,
@@ -480,8 +493,9 @@
 				2013000329912D8000E4420D /* UserDefaults+ADK.swift in Sources */,
 				20D403FB2998C951003D7430 /* SystemControl.swift in Sources */,
 				20130009299146F000E4420D /* BinaryFloatingPoint+ADK.swift in Sources */,
-				2013FFE4298F7D7100E4420D /* WeakObject.swift in Sources */,
+				2013FFE4298F7D7100E4420D /* WeakObjects.swift in Sources */,
 				2013FFD6298F743900E4420D /* Foundation.swift in Sources */,
+				20D4043F29994684003D7430 /* Validator.swift in Sources */,
 				201300052991339C00E4420D /* FileManager+ADK.swift in Sources */,
 				2013FFD9298F769A00E4420D /* Image+ADK.swift in Sources */,
 				2013FFD1298F735D00E4420D /* CGSize+ADK.swift in Sources */,
@@ -499,9 +513,11 @@
 				2013FFFB298F8FCF00E4420D /* DispatchTimerTests.swift in Sources */,
 				20D403FD2998DA6C003D7430 /* SystemControlTests.swift in Sources */,
 				2013FFDD298F7BF000E4420D /* ArrayMoveTests.swift in Sources */,
+				20D4044129994746003D7430 /* ValidatorTests.swift in Sources */,
 				2013FFF0298F85D300E4420D /* BundleTests.swift in Sources */,
 				2013FFF5298F8BB400E4420D /* VersionTests.swift in Sources */,
 				2013FFE9298F80B900E4420D /* MemoryCahceTests.swift in Sources */,
+				20D4043B29994058003D7430 /* WeakObjectsTests.swift in Sources */,
 				20130000298F91B000E4420D /* DispatchQueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

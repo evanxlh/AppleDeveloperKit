@@ -34,10 +34,11 @@ I hope it will be your code mannual during project development.
 │   │   ├── BinaryFloatingPoint+ADK.swift
 │   │   ├── DispatchQueue+ADK.swift
 │   │   ├── FileManager+ADK.swift
+│   │   ├── String+ADK.swift
 │   │   └── UserDefaults+ADK.swift
 │   ├── Foundation.swift
 │   ├── Locks.swift
-│   └── WeakObject.swift
+│   └── WeakObjects.swift
 ├── Image
 │   └── Image+ADK.swift
 ├── Utility
@@ -45,6 +46,7 @@ I hope it will be your code mannual during project development.
 │   ├── TimeProfiler
 │   │   ├── MultiTimeProfiler.swift
 │   │   └── TimeProfiler.swift
+│   ├── Validator.swift
 │   └── Version.swift
 └── macOS
     ├── Extension

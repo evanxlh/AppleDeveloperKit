@@ -49,7 +49,7 @@ public class MemoryCache<Key, Item> where Key: Hashable {
     
 }
 
-//MARK: - Public APIs
+// MARK: - Public APIs
 
 public extension MemoryCache {
     
@@ -206,7 +206,7 @@ public extension MemoryCache {
     
 }
 
-//MARK: - Private Assistant Functions
+// MARK: - Private Assistant Functions
 
 fileprivate extension MemoryCache {
     
@@ -247,7 +247,7 @@ fileprivate extension MemoryCache {
     
 }
 
-//MARK: - Private Data Structs
+// MARK: - Private Data Structs
 
 fileprivate extension MemoryCache {
     
