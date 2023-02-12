@@ -5,6 +5,8 @@
 //  Created by Evan Xie on 2023/2/6.
 //
 
+#if os(macOS)
+
 import Foundation
 
 public enum ShellError: Error {
@@ -57,3 +59,5 @@ public struct Shell {
     }
     
 }
+
+#endif

@@ -264,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				2013FFF2298F8B7000E4420D /* Version.swift */,
-				2013000F2991524600E4420D /* Shell.swift */,
+				20D403FA2998C951003D7430 /* SystemControl.swift */,
 				5470A1732990977800CC2CAD /* TimeProfiler */,
 			);
 			path = Utility;
@@ -300,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				20D403F72998C6AC003D7430 /* Extension */,
-				20D403FA2998C951003D7430 /* SystemControl.swift */,
+				2013000F2991524600E4420D /* Shell.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
