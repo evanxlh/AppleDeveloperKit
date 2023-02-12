@@ -7,14 +7,16 @@
 
 import Foundation
 
-#if os(macOS)
+#if canImport(AppKit)
 import AppKit
 public typealias ADKImage = NSImage
 public typealias ADKColor = NSColor
+public typealias ADKView = NSView
 #else
 import UIKit
 public typealias ADKImage = UIImage
 public typealias ADKColor = UIColor
+public typealias ADKView = UIView
 #endif
 
 /// AppleKit 中的类型包装器，用于提供扩展方法

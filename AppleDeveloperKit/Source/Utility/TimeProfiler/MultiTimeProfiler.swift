@@ -29,7 +29,7 @@ public final class MultipleTimeProfiler {
     }
     
     @discardableResult
-    func measure<T>(tagName: String, block: () -> T, resultCallback: ((TimeInterval) -> Void)? = nil) -> T {
+    public func measure<T>(tagName: String, block: () -> T, resultCallback: ((TimeInterval) -> Void)? = nil) -> T {
         TimeProfiler.measure(tagName: tagName, block: block) { [unowned self] timeCost in
             self.lock.sync {
                 let item = MeasurementResultItem(tag: tagName, timeCost: timeCost)

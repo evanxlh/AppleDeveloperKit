@@ -12,28 +12,22 @@ import UIKit
 import AppKit
 #endif
 
+public extension ADKImage {
+    
+    static func makeImage(from cgImage: CGImage, scale: CGFloat, referencedImage: ADKImage? = nil) -> ADKImage {
+#if os(macOS)
+        return ADKImage(cgImage: cgImage, size: .zero)
+#else
+        return ADKImage(cgImage: cgImage, scale: scale, orientation: referencedImage?.imageOrientation ?? .up)
+#endif
+    }
+}
+
 extension ADKImage: AppleDeveloperKitCompatible {}
 
 public extension AppleDeveloperKitWrapper where Base == ADKImage {
-#if os(macOS)
     
-    static func makeImage(from cgImage: CGImage, scale: CGFloat, referencedImage: ADKImage?) -> ADKImage {
-        return ADKImage(cgImage: cgImage, size: .zero)
-    }
-    
-#else
-    
-    static func makeImage(from cgImage: CGImage, scale: CGFloat, referencedImage: ADKImage?) -> ADKImage {
-        return ADKImage(cgImage: cgImage, scale: scale, orientation: referencedImage?.imageOrientation ?? .up)
-    }
-    
-#endif
-}
-
-extension AppleDeveloperKitWrapper where Base == ADKImage {
-    
-    public func resize(to size: CGSize) -> ADKImage {
-        
+    func resize(to size: CGSize) -> ADKImage {
 #if os(macOS)
         let destImage = NSImage(size: size)
         destImage.lockFocus()
@@ -43,7 +37,6 @@ extension AppleDeveloperKitWrapper where Base == ADKImage {
         destImage.unlockFocus()
         return destImage
 #else
-        
         let render = UIGraphicsImageRenderer(size: size)
         return render.image { context in
             base.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
@@ -51,12 +44,12 @@ extension AppleDeveloperKitWrapper where Base == ADKImage {
 #endif
     }
     
-    public func resize(to size: CGSize, mode: ResizeMode) -> ADKImage {
+    func resize(to size: CGSize, mode: ResizeMode) -> ADKImage {
         let newSize = size.adk.resize(to: size, mode: mode)
         return resize(to: newSize)
     }
     
-    public func crop(to size: CGSize, anchor: CGPoint) -> ADKImage {
+    func crop(to size: CGSize, anchor: CGPoint) -> ADKImage {
         guard let cgImage = self.cgImage else {
             assertionFailure("Cropping only limit to CGImage")
             return base
@@ -67,44 +60,38 @@ extension AppleDeveloperKitWrapper where Base == ADKImage {
             assertionFailure("Cropping image failed")
             return base
         }
-        return Self.makeImage(from: image, scale: self.scale, referencedImage: base)
+        return ADKImage.makeImage(from: image, scale: self.scale, referencedImage: base)
     }
 }
 
 fileprivate extension AppleDeveloperKitWrapper where Base == ADKImage {
-    
-#if os(macOS)
-    
+
     var cgImage: CGImage? {
+#if os(macOS)
         return base.cgImage(forProposedRect: nil, context: nil, hints: nil)
+#else
+        return base.cgImage
+#endif
     }
     
     var size: CGSize {
+#if os(macOS)
         return base.representations.reduce(.zero, { result, imageRep in
             let width = max(result.width, CGFloat(imageRep.pixelsWide))
             let height = max(result.height, CGFloat(imageRep.pixelsHigh))
             return CGSize(width: width, height: height)
         })
-    }
-    
-    var scale: CGFloat {
-        return 1.0
-    }
-    
 #else
-    
-    var cgImage: CGImage? {
-        return base.cgImage
-    }
-    
-    var size: CGSize {
         return base.size
+#endif
     }
     
     var scale: CGFloat {
+#if os(macOS)
+        return 1.0
+#else
         return base.scale
-    }
-    
 #endif
+    }
     
 }

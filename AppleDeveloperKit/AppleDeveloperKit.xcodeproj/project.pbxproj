@@ -37,6 +37,8 @@
 		2013FFF5298F8BB400E4420D /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFF4298F8BB400E4420D /* VersionTests.swift */; };
 		2013FFFB298F8FCF00E4420D /* DispatchTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */; };
 		2013FFFE298F913900E4420D /* DispatchQueue+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */; };
+		20D403F32998BDD4003D7430 /* VideoLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D403F22998BDD4003D7430 /* VideoLayerView.swift */; };
+		20D403F52998C12B003D7430 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D403F42998C12B003D7430 /* CameraPreviewView.swift */; };
 		5470A175299097AA00CC2CAD /* TimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5470A174299097AA00CC2CAD /* TimeProfiler.swift */; };
 		5470A1772990987E00CC2CAD /* MultiTimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimerTests.swift; sourceTree = "<group>"; };
 		2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ADK.swift"; sourceTree = "<group>"; };
 		2013FFFF298F91B000E4420D /* DispatchQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueTests.swift; sourceTree = "<group>"; };
+		20D403F22998BDD4003D7430 /* VideoLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLayerView.swift; sourceTree = "<group>"; };
+		20D403F42998C12B003D7430 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		5470A174299097AA00CC2CAD /* TimeProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProfiler.swift; sourceTree = "<group>"; };
 		5470A1762990987E00CC2CAD /* MultiTimeProfiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTimeProfiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 			children = (
 				2013000B2991494000E4420D /* PlayerController.swift */,
 				2013000D2991497400E4420D /* VideoTrimmer.swift */,
+				20D403F22998BDD4003D7430 /* VideoLayerView.swift */,
+				20D403F42998C12B003D7430 /* CameraPreviewView.swift */,
 			);
 			path = AudioVideo;
 			sourceTree = "<group>";
@@ -198,7 +204,6 @@
 				2013FFDF298F7D4500E4420D /* Locks.swift */,
 				2013FFE3298F7D7100E4420D /* WeakObject.swift */,
 				2013000129912D3D00E4420D /* Extension */,
-				2013FFFC298F90AF00E4420D /* Dispatch */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -263,13 +268,6 @@
 				2013FFE8298F80B900E4420D /* MemoryCahceTests.swift */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		2013FFFC298F90AF00E4420D /* Dispatch */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Dispatch;
 			sourceTree = "<group>";
 		};
 		5470A1732990977800CC2CAD /* TimeProfiler */ = {
@@ -399,7 +397,9 @@
 				2013FFCF298F734B00E4420D /* CGPoint+ADK.swift in Sources */,
 				201300102991524600E4420D /* Shell.swift in Sources */,
 				2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */,
+				20D403F32998BDD4003D7430 /* VideoLayerView.swift in Sources */,
 				2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */,
+				20D403F52998C12B003D7430 /* CameraPreviewView.swift in Sources */,
 				2013000E2991497400E4420D /* VideoTrimmer.swift in Sources */,
 				201300072991393900E4420D /* FileCacheManager.swift in Sources */,
 				5470A1772990987E00CC2CAD /* MultiTimeProfiler.swift in Sources */,
