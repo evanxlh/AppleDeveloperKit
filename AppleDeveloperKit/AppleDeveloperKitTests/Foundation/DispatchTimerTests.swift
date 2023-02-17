@@ -12,21 +12,29 @@ final class DispatchTimerTests: XCTestCase {
 
     func testStates() throws {
         let timer = DispatchTimer()
-        XCTAssertTrue(timer.currentState == .idle)
+        XCTAssertTrue(timer.state == .idle)
         
-        timer.schedule(withInterval: 1.0, repeatMode: .count(3), fireClosure: { _, _ in
-            
+        timer.schedule(withInterval: 0.001, repeatMode: .always, fireClosure: { _, _ in
+
         })
-        XCTAssertTrue(timer.currentState == .running)
+        XCTAssertTrue(timer.state == .running)
         
         timer.pause()
-        XCTAssertTrue(timer.currentState == .paused)
-        
+        XCTAssertTrue(timer.state == .paused)
+
+        timer.cancel()
+        XCTAssertTrue(timer.state == .idle)
+
+        timer.timer?.start()
+
         timer.resume()
-        XCTAssertTrue(timer.currentState == .running)
+        XCTAssertTrue(timer.state == .idle)
         
-        timer.invalidate()
-        XCTAssertTrue(timer.currentState == .idle)
+        timer.pause()
+        XCTAssertTrue(timer.state == .idle)
+
+        timer.cancel()
+        XCTAssertTrue(timer.state == .idle)
     }
     
     func testPause() throws {
@@ -35,52 +43,56 @@ final class DispatchTimerTests: XCTestCase {
         
         let startTimestamp = CFAbsoluteTimeGetCurrent()
         var endTimestamp = startTimestamp
+
+        timer.cancelledCallback = {
+            expectation.fulfill()
+        }
         
-        timer.schedule(withInterval: 1.0, repeatMode: .count(3), fireClosure: { timer ,info in
-            
+        timer.schedule(withInterval: 0.001, repeatMode: .count(1000), fireClosure: { timer ,info in
             if info.firedTimes == 3 {
                 endTimestamp = CFAbsoluteTimeGetCurrent()
-                print("ℹ️ DispathTimer ending timestamp: \(endTimestamp - startTimestamp)")
-                expectation.fulfill()
             }
             
-            if info.firedTimes > 3 {
-                XCTAssertTrue(false, "Fired times exceeds 2")
+            if info.firedTimes > 1000 {
+                XCTAssertTrue(false, "Fired times exceeds 1000")
             }
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
             timer.pause()
+            XCTAssertTrue(timer.state == .paused)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2500)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(800)) {
             timer.resume()
+            XCTAssertTrue(timer.state == .running)
         }
         
-        wait(for: [expectation], timeout: 5)
-        XCTAssertTrue(endTimestamp - startTimestamp > 3)
-        XCTAssertTrue(timer.currentState == .idle)
+        wait(for: [expectation], timeout: 1.8)
+        XCTAssertTrue(endTimestamp - startTimestamp >= 0.003)
+        XCTAssertTrue(endTimestamp - startTimestamp <= 0.004)
+        XCTAssertTrue(timer.state == .idle)
     }
     
     func testInvalidate() throws {
         let timer = DispatchTimer()
-        timer.schedule(withInterval: 0.1, repeatMode: .count(5), fireClosure: { _ , _ in
+        timer.schedule(withInterval: 0.001, repeatMode: .count(5), fireClosure: { _ , _ in
         })
         
-        timer.invalidate()
-        XCTAssertTrue(timer.currentState == .idle)
+        timer.cancel()
+        XCTAssertTrue(timer.state == .idle)
         
         let expectation = XCTestExpectation(description: "")
         
-        timer.schedule(withInterval: 0.1, repeatMode: .count(5)) { _, info in
+        timer.schedule(withInterval: 0.001, repeatMode: .count(5)) { _, info in
             if info.firedTimes == 5 {
                 expectation.fulfill()
             }
         }
-        XCTAssertTrue(timer.currentState == .running)
+        XCTAssertTrue(timer.state == .running)
         
-        wait(for: [expectation], timeout: 2)
-        XCTAssertTrue(timer.currentState == .idle)
+        wait(for: [expectation], timeout: 0.01)
+        XCTAssertTrue(timer.state == .idle)
     }
 
 }
