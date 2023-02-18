@@ -31,6 +31,11 @@
 		2013FFEE298F82A700E4420D /* AppleBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFED298F82A700E4420D /* AppleBundle.swift */; };
 		2013FFF3298F8B7000E4420D /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFF2298F8B7000E4420D /* Version.swift */; };
 		2013FFFE298F913900E4420D /* DispatchQueue+ADK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */; };
+		2091B81729A127AD0084E3FC /* CAMediaTimingFunction+More.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091B81629A127AD0084E3FC /* CAMediaTimingFunction+More.swift */; };
+		2091B81A29A12D940084E3FC /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091B81929A12D940084E3FC /* Stack.swift */; };
+		2091B81F29A12F950084E3FC /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091B81C29A12F950084E3FC /* Subject.swift */; };
+		2091B82029A12F950084E3FC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091B81D29A12F950084E3FC /* Disposable.swift */; };
+		2091B82129A12F950084E3FC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2091B81E29A12F950084E3FC /* Observable.swift */; };
 		20AEA69C299FAA2D0003CD0E /* AVTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AEA69B299FAA2D0003CD0E /* AVTypes.swift */; };
 		20AEA69E299FAAD30003CD0E /* PixelBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AEA69D299FAAD30003CD0E /* PixelBufferPool.swift */; };
 		20AEA6B2299FCF1D0003CD0E /* DispatchTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */; };
@@ -89,6 +94,11 @@
 		2013FFFA298F8FCF00E4420D /* DispatchTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimerTests.swift; sourceTree = "<group>"; };
 		2013FFFD298F913900E4420D /* DispatchQueue+ADK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ADK.swift"; sourceTree = "<group>"; };
 		2013FFFF298F91B000E4420D /* DispatchQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueTests.swift; sourceTree = "<group>"; };
+		2091B81629A127AD0084E3FC /* CAMediaTimingFunction+More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+More.swift"; sourceTree = "<group>"; };
+		2091B81929A12D940084E3FC /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		2091B81C29A12F950084E3FC /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		2091B81D29A12F950084E3FC /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		2091B81E29A12F950084E3FC /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		20AEA69B299FAA2D0003CD0E /* AVTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVTypes.swift; sourceTree = "<group>"; };
 		20AEA69D299FAAD30003CD0E /* PixelBufferPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelBufferPool.swift; sourceTree = "<group>"; };
 		20AEA69F299FB2910003CD0E /* MemoryMonitorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMonitorTest.swift; sourceTree = "<group>"; };
@@ -194,12 +204,14 @@
 			isa = PBXGroup;
 			children = (
 				2013FFCB298F724800E4420D /* AppleDeveloperKit.swift */,
-				2013FFD4298F741800E4420D /* Foundation */,
+				2091B81829A12D830084E3FC /* Algorithm */,
+				2091B81529A127890084E3FC /* Animation */,
+				2013000A299148FD00E4420D /* AudioVideo */,
 				2013FFEA298F81F300E4420D /* Bundle */,
 				2013FFE5298F7E2700E4420D /* Cache */,
 				2013FFCD298F72E100E4420D /* CoreGraphics */,
+				2013FFD4298F741800E4420D /* Foundation */,
 				2013FFD7298F768000E4420D /* Image */,
-				2013000A299148FD00E4420D /* AudioVideo */,
 				2013FFF1298F8B5D00E4420D /* Utility */,
 				20D403F62998C4BE003D7430 /* macOS */,
 			);
@@ -225,6 +237,7 @@
 				2013FFDF298F7D4500E4420D /* Locks.swift */,
 				2013FFE3298F7D7100E4420D /* WeakObjects.swift */,
 				2013000129912D3D00E4420D /* Extension */,
+				2091B81B29A12F5B0084E3FC /* ObservationLite */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -294,6 +307,32 @@
 				2013FFE8298F80B900E4420D /* MemoryCahceTests.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		2091B81529A127890084E3FC /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2091B81629A127AD0084E3FC /* CAMediaTimingFunction+More.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		2091B81829A12D830084E3FC /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				2091B81929A12D940084E3FC /* Stack.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		2091B81B29A12F5B0084E3FC /* ObservationLite */ = {
+			isa = PBXGroup;
+			children = (
+				2091B81D29A12F950084E3FC /* Disposable.swift */,
+				2091B81E29A12F950084E3FC /* Observable.swift */,
+				2091B81C29A12F950084E3FC /* Subject.swift */,
+			);
+			path = ObservationLite;
 			sourceTree = "<group>";
 		};
 		20AEA69A299FA9BF0003CD0E /* AVFoundation */ = {
@@ -449,10 +488,13 @@
 				2013FFF3298F8B7000E4420D /* Version.swift in Sources */,
 				2013FFCF298F734B00E4420D /* CGPoint+ADK.swift in Sources */,
 				201300102991524600E4420D /* Shell.swift in Sources */,
+				2091B82029A12F950084E3FC /* Disposable.swift in Sources */,
 				20AEA69E299FAAD30003CD0E /* PixelBufferPool.swift in Sources */,
+				2091B81F29A12F950084E3FC /* Subject.swift in Sources */,
 				20DCF00E299A8A39007A3622 /* MemoryMonitor.swift in Sources */,
 				2013FFE7298F800F00E4420D /* MemoryCache.swift in Sources */,
 				20D403F32998BDD4003D7430 /* VideoLayerView.swift in Sources */,
+				2091B82129A12F950084E3FC /* Observable.swift in Sources */,
 				2013FFE2298F7D5500E4420D /* DispatchTimer.swift in Sources */,
 				20D4043D29994551003D7430 /* String+ADK.swift in Sources */,
 				20D403F52998C12B003D7430 /* CameraPreviewView.swift in Sources */,
@@ -470,9 +512,11 @@
 				20AEA6B4299FD8BB0003CD0E /* AnyDispatchSource.swift in Sources */,
 				20D4043F29994684003D7430 /* Validator.swift in Sources */,
 				201300052991339C00E4420D /* FileManager+ADK.swift in Sources */,
+				2091B81A29A12D940084E3FC /* Stack.swift in Sources */,
 				2013FFD9298F769A00E4420D /* Image+ADK.swift in Sources */,
 				2013FFD1298F735D00E4420D /* CGSize+ADK.swift in Sources */,
 				2013FFFE298F913900E4420D /* DispatchQueue+ADK.swift in Sources */,
+				2091B81729A127AD0084E3FC /* CAMediaTimingFunction+More.swift in Sources */,
 				2013000C2991494000E4420D /* PlayerController.swift in Sources */,
 				5470A175299097AA00CC2CAD /* TimeProfiler.swift in Sources */,
 				20D403F92998C730003D7430 /* NSWindow+Info.swift in Sources */,
