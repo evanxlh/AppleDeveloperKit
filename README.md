@@ -1,4 +1,4 @@
-# AppleDeveloperKit
+AppleDeveloperKit
 
 
 
@@ -11,12 +11,33 @@ I hope it will be your code mannual during project development.
 ## Code structure
 
 ```shell
+├── Algorithm
+│   └── Stack.swift
+├── Animation
+│   └── CAMediaTimingFunction+More.swift
 ├── AppleDeveloperKit.swift
 ├── AudioVideo
-│   ├── CameraPreviewView.swift
+│   ├── AVHelper.swift
+│   ├── Audio
+│   │   ├── AudioDefinitions.swift
+│   │   ├── AudioError.swift
+│   │   ├── AudioGenerator.swift
+│   │   └── AudioInfoCollector.swift
+│   ├── H264
+│   │   ├── H264Decoder.h
+│   │   ├── H264Decoder.m
+│   │   ├── H264Encoder.h
+│   │   ├── H264Encoder.m
+│   │   ├── H264Error.h
+│   │   ├── H264Error.m
+│   │   ├── H264Nalu.h
+│   │   └── H264Nalu.m
+│   ├── PixelBufferPool.swift
 │   ├── PlayerController.swift
-│   ├── VideoLayerView.swift
-│   └── VideoTrimmer.swift
+│   └── Video
+│       ├── CameraPreviewView.swift
+│       ├── VideoLayerView.swift
+│       └── VideoTrimmer.swift
 ├── Bundle
 │   ├── AppleBundle.swift
 │   └── MainBundle.swift
@@ -28,6 +49,7 @@ I hope it will be your code mannual during project development.
 │   ├── CGRect+ADK.swift
 │   └── CGSize+ADK.swift
 ├── Foundation
+│   ├── AnyDispatchSource.swift
 │   ├── DispatchTimer.swift
 │   ├── Extension
 │   │   ├── Array+ADK.swift
@@ -38,10 +60,17 @@ I hope it will be your code mannual during project development.
 │   │   └── UserDefaults+ADK.swift
 │   ├── Foundation.swift
 │   ├── Locks.swift
+│   ├── ObservationLite
+│   │   ├── Disposable.swift
+│   │   ├── Observable.swift
+│   │   └── Subject.swift
 │   └── WeakObjects.swift
 ├── Image
 │   └── Image+ADK.swift
+├── Metal
+│   └── CVPixelBuffer+MetalTexture.swift
 ├── Utility
+│   ├── MemoryMonitor.swift
 │   ├── SystemControl.swift
 │   ├── TimeProfiler
 │   │   ├── MultiTimeProfiler.swift
